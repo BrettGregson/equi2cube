@@ -102,10 +102,14 @@ var equi2cube = (function() {
 			canvas.width = image.naturalWidth || image.width;
 			canvas.height = image.naturalHeight || image.height;
 			ctx = canvas.getContext('2d');
+			ctx.translate(canvas.width, 0);
+			ctx.scale(-1, 1);
 			ctx.drawImage(image, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
 		}
 		else {
 			ctx = canvas.getContext('2d');
+			ctx.translate(canvas.width, 0);
+			ctx.scale(-1, 1);
 		}
 		return ctx.getImageData(0, 0, canvas.width, canvas.height);
 	}
